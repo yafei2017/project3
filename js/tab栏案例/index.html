@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8" />
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrapper {
+      width: 1000px;
+      height: 475px;
+      /* 居中 */
+      margin: 0 auto;
+      /* 上外边距100px */
+      margin-top: 100px;
+    }
+
+    .tab {
+      border: 1px solid #ddd;
+      border-bottom: 0;
+      height: 36px;
+      width: 320px;
+    }
+
+    .tab li {
+      /* 相对位置 */
+      position: relative;
+      /* 浮动 */
+      float: left;
+      width: 80px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      /* cursor CSS 属性设置光标的类型（如果有），在鼠标指针悬停在元素上时显示相应样式。 小手形式*/
+      cursor: pointer;
+      border-top: 4px solid #fff;
+    }
+
+    .tab span {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      background: #ddd;
+      width: 1px;
+      height: 14px;
+      /* 内容会被修剪，并且其余内容是不可见的。overflow属性指定如果内容溢出一个元素的框，会发生什么 */
+      overflow: hidden;
+    }
+
+    .products {
+      width: 1002px;
+      border: 1px solid #ddd;
+      height: 476px;
+    }
+  /* main样式 默认的情况下为main样式点击后更改为active样式 */
+    .products .main {
+      float: left;
+      /* 隐藏 */
+      display: none;
+    }
+
+    .products .main.active {
+      /* 样式设置为块类 */
+      display: block;
+    }
+
+    .tab li.active {
+      border-color: red;
+      border-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="tab">
+      <li class="tab-item active">国际大牌<span>◆</span></li>
+      <li class="tab-item">国妆名牌<span>◆</span></li>
+      <li class="tab-item">清洁用品<span>◆</span></li>
+      <li class="tab-item">男士精品</li>
+    </ul>
+    <div class="products">
+      <div class="main active">
+        <a href="###"><img src="imgs/guojidapai.jpg" alt="" /></a>
+      </div>
+      <div class="main">
+        <a href="###"><img src="imgs/guozhuangmingpin.jpg" alt="" /></a>
+      </div>
+      <div class="main">
+        <a href="###"><img src="imgs/qingjieyongpin.jpg" alt="" /></a>
+      </div>
+      <div class="main">
+        <a href="###"><img src="imgs/nanshijingpin.jpg" alt="" /></a>
+      </div>
+    </div>
+  </div>
+<script>
+  let lis = document.querySelectorAll('.tab .tab-item')
+  let dis = document.querySelectorAll('.products .main')
+  for(let i =0;i<lis.length;i++){
+    lis[i].addEventListener('click',function(){
+    document.querySelector('.tab .active').classList.remove('active')
+    this.classList.add('active')
+    document.querySelector('.products .active').classList.remove('active')
+    dis[i].classList.add('active')
+    })
+    
+  }
+  // 父子关系用空格隔开，兄弟关系直接连着写
+// let lis = document.querySelectorAll('.tab .tab-item')
+// for(let i =0;i<lis.length;i++){
+//   lis[i].addEventListener('click',function(){
+//     // console.log(11);
+//     // 找到之前带有active类的li，删除它的active，（先找父在找子），queryselector中类前有点。remove中active前不带点
+//     // 排他思想
+//     document.querySelector('.tab .active').classList.remove('active')
+//     this.classList.add('active')
+//   })
+// }
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../template-web.js"></script>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="h"></div>
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}} ------{{age}}  {{@ text}}<h1>
+            <div>
+                {{each hobby}}
+                <li>{{$index}}</li>
+                <li>{{$value}}</li>
+                {{/each}}
+            </div>
+            <div>{{time1 | time2}}</div>
+    </script>
+    <script>
+        template.defaults.imports.time2 = function(e){
+            var y = e.getFullYear()
+            var m = e.getMonth() + 1
+            var d = e.getDate()
+            return y + '-' + m + '-' + d
+        }
+        var data = {
+        name:'杨海',
+        age:18,
+        text: "<h3>侯亚飞是杨海男朋友</h3>",
+        hobby:['海宝','海宝宝','宝贝','宝宝','海宝呀'],
+        time1:new Date()
+
+    }
+
+
+    var htmlte = template('tpl-user',data)
+    $('#h').html(htmlte)
+
+    </script>
+</body>
+</html>

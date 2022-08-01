@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <ul>
+        <li>这是海宝嘛</li>
+        <li class="text">这是海宝嘛</li>
+        <li>这是海宝嘛</li>
+        <li>这是海宝嘛</li>
+        <li>这是海宝嘛</li>
+        <li>这是海宝嘛</li>
+    </ul>
+    <script>
+        let bu = document.querySelector('button')
+        let div = document.querySelector('ul')
+        // let uls = document.querySelector('.text')
+        // bu.addEventListener('click',function(){
+        //     let lis = uls.nextElementSibling.style.color = 'red'
+        //     uls.previousElementSibling.style.color = 'green'
+        // })
+        let dbt = document.createElement('p')
+        div.appendChild(dbt)
+        dbt.innerHTML = '海宝呀' 
+        div.insertBefore(dbt,div.children[1])
+    </script>
+</body>
+</html>

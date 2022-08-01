@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+        border: 1px solid ;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 20px;
+    }
+</style>
+<body>
+    <div>
+        抽中的选手是：<span></span>
+    </div>
+    <script>
+        function getRandom(min,max){
+            return  Math.floor(Math.random()*(max - min +1)+min)
+        }
+
+        let arr =['张三','海宝','侯亚飞','侯斯文','海宝宝']
+        let random = getRandom(0,arr.length-1)
+        let span = document.querySelector('span')
+        span.innerHTML = arr[random]
+        arr.splice(random,1)
+    </script>
+</body>
+</html>

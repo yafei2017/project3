@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 高度和宽度应用于元素的所有部分: 内容、内边距和边框 */
+            box-sizing: border-box;
+        }
+
+        ul {
+        /* 声明列表属性 无标记/ */
+            list-style: none;
+        }
+
+        .mi {
+            /* 相对定位 */
+            position: relative;
+            width: 223px;
+            margin: 100px auto;
+        }
+
+        .mi input {
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+            border: 1px solid #e0e0e0;
+            /* outline与border相似，不同的在于outline 不占据空间，绘制于元素内容周围。 */
+            outline: none;
+        }
+        /* 父子关系 */
+        .mi .search {
+            border: 1px solid #ff6700;
+        }
+
+        .result-list {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 223px;
+            border: 1px solid #ff6700;
+            border-top: 0;
+            background: #fff;
+        }
+
+        .result-list a {
+            display: block;
+            padding: 6px 15px;
+            font-size: 12px;
+            color: #424242;
+            /* text-decoration 属性规定添加到文本的修饰，下划线、上划线、删除线等。 */
+            text-decoration: none;
+        }
+
+        .result-list a:hover {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="爱你哟">
+        <ul class="result-list">
+            <li><a href="#" class="h">海宝</a></li>
+            <li><a href="#" class="y">海宝宝</a></li>
+            <li><a href="#">杨海</a></li>
+            <li><a href="#">侯亚飞</a></li>
+            <li><a href="#">侯斯文</a></li>
+            <li><a href="#">飞</a></li>
+            <li><a href="#">海嗨嗨</a></li>
+        </ul>
+    </div>
+    <script>
+        let put = document.querySelector('input')
+        let list = document.querySelector('.result-list')
+        put.addEventListener('focus',function(){
+            list.style.display = 'block'
+            put.classList.add('search')
+        })
+        put.addEventListener('blur',function(){
+            list.style.display = 'none'
+            put.classList.remove('search')
+        })
+        // let l = document.querySelector('a')
+        // l.addEventListener('mouseenter',function(){
+        //     alert('海宝最可爱了！')
+        // })
+        // l.addEventListener('mouseleave',function(){
+        //     alert('海宝真可爱呀！')
+        // })
+        let l = document.querySelector('.h')
+        l.addEventListener('mouseenter',function(){
+            alert('海宝最可爱了！')
+        })
+        let y = document.querySelector('.y')
+        l.addEventListener('mouseenter',function(){
+            alert('海宝想我了吗？')
+        })
+
+
+    </script>
+</body>
+
+</html>

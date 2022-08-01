@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入 ">
+    <button disabled>海宝</button>
+    <div></div>
+    <script>
+        // let k = prompt('请输入您的名字')
+        // let te = document.querySelector('input')
+        // te.value = '海宝'
+        // te.type = 'password'
+        // let bu = document.querySelector('button')
+        // if (k!=="侯亚飞") {
+        //     bu.disabled =true 
+
+        // }
+        let n =6
+        // function num(n){
+        //     let b = document.querySelector('button')
+        //     b.disabled = false
+        //     b.innerHTML = `海宝${n}`
+        // }
+        // let num1 =setInterval(num, 10000);
+        // if (n ===1){
+        //     clearInterval(num)
+        // }
+        let num2 = setInterval(num3,1000)
+        function num3(){
+            let b = document.querySelector('button')
+            b.innerHTML = `海宝${n}`
+            n--
+            if (n<0){
+                clearInterval(num2)
+                b.disabled =false
+                b.innerHTML ='海宝'
+            }
+        }
+        
+    </script>
+</body>
+</html>

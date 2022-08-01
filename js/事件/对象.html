@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person ={
+            sex: '男', 
+            name: '侯斯文',
+            age: 18,
+            sing:function(){
+                for (let i =0;i<5;i++){
+                    console.log('海宝，海宝我爱你！')
+                }
+                console.log('唱跳rap')
+                
+            }
+           
+
+        }
+        person.sex ='hei'
+        person.age = 23
+        console.log(person.age);
+        console.log(person['name'])
+        person.sing()
+        person.duixiang = '海宝'
+        console.log(person.duixiang)
+        person.skill = function(){
+            console.log('打代码')
+        }
+        person.skill()
+        delete person.sex
+        delete person.sing
+        console.log(person)
+        for (let k in person){
+            document.write(k+`:`)
+            document.write(person[k],`<br>`)
+        }
+        let stu = [
+            {name: '侯斯文',age:18,sing:function(){
+                for (let i =0;i<5;i++){
+                    console.log('海宝，海宝我爱你！')
+                }
+                console.log('唱跳rap')
+                
+            }},
+            {name: '侯斯文2',age:19,sing:function(){
+                for (let i =0;i<5;i++){
+                    console.log('海宝，海宝我爱你！')
+                }
+                console.log('唱跳rap')
+                
+            }},
+            {name: '侯斯文3',age:20,sing:function(){
+                for (let i =0;i<5;i++){
+                    console.log('海宝，海宝我爱你！')
+                }
+                console.log('唱跳rap')
+                
+            }}
+        ]
+        for (let i=0;i<stu.length;i++){
+            stu[i].sing()
+        }
+        console.log(Math.abs(-12));
+    </script>
+</body>
+</html>

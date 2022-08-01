@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+    <form action="/login" id="form1" target="_blank">
+        <input type="text" name="username">
+        <input type="password" name="pasword">
+        <button type="submit">提交</button>
+
+    </form>
+    <script>
+        $(function(){
+            // $("#form1").submit(function(){
+            //     alert(11)
+            // })
+            $("#form1").on("submit",function(e){
+                // alert(11)
+                e.preventDefault()
+                let a =$(this).serialize()
+                console.log(a);
+            })
+        })
+    </script>
+</body>
+</html>

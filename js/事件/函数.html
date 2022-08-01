@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function a(b){
+        //     document.write(b)
+        //     document.write('哈哈哈')
+        // }
+        // for(let i =0;i<5;i++){
+        //     a('黑')
+        // }
+        // let arr = [8,90,70,60,54]
+        // function getsum(b){
+        //      let sum = b[0]
+        //     for(let i=1;i<b.length;i++){
+        //         if(sum < b[i]){
+        //             sum = b[i]
+        //         }
+        //     }
+        //     // document.write(sum)
+        //     return [sum,arr]
+        // }
+        // let n = getsum(arr)
+        // document.write(n[1],n[0])\
+        function getTime(){
+            let n = +prompt("请输入要转换的时间：")
+            let s = parseInt(n/60/60%24)
+            let f = parseInt(n/60%60)
+            let s1 = parseInt(n%60) 
+            if (s<10){
+                s = '0'+s
+            }
+            if (f<10){
+                f = '0'+f
+            }
+            if (s1<10){
+                s1= '0'+s1
+            }
+            document.write(s+`<br>`,f+`<br>`,s1)
+        }
+        getTime()
+
+    </script>
+</body>
+</html>

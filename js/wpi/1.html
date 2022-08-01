@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <ul>
+        <li>hahah</li>
+    </ul>
+    <script>
+        // let ul = document.querySelector('ul')
+        // let newUl = ul.cloneNode(true)
+        // // body标签是唯一的  通过这种方式不用在获取标签
+        // document.body.appendChild(newUl)
+        let dbt = document.querySelector('ul')
+        let bu = document.querySelector('button')
+        bu.addEventListener('click',function(){
+            // 通过dbt.children获取ul的孩子
+            dbt.removeChild(dbt.children[0])
+        })
+        let date = new Date()
+        dbt.innerHTML = `${date }`
+        let date1 = new Date('2022-03-09')
+        let h = date.getDate()
+        dbt.innerHTML = `${h}`
+        let s =  '12s'
+        s = parseInt(s)
+        console.log(s);
+    </script>
+</body>
+</html>

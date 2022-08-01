@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color:pink;
+            /* 盒子居中对齐 */
+            margin: 0 auto;
+            /* 相对定位 */
+            position: relative;
+        }
+        .box1{
+            width: 250px;
+            height: 60px;
+            position: absolute;
+            background-color: #fff;
+            left: 25px;
+            /* 文字居中 */
+            text-align: center;
+            /* 设置行高 */
+            line-height: 60px;
+            border: 1px solid ;
+        }
+        .b1{
+            position: absolute;
+            top: 70px;
+            left:15px;
+        }
+        .b2{
+            /* 绝对位置（定位 父相子绝   绝对定位不能用margin） */
+            position: absolute;
+            top: 70px;
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <button class="b1">开始</button>
+        <button class="b2">结束</button>
+        <script>
+            let arr = ['侯亚飞','杨海','侯斯文','海宝','海宝宝','飞']
+            // 定义一个得到随机数的函数
+            function getRandom(min,max){
+            return  Math.floor(Math.random()*(max - min +1)+min)
+            }
+            // 得到俩个按钮  一个div class的加 . 例.b1
+            let b1 = document.querySelector('.b1')
+            let b2 = document.querySelector('.b2')
+            let box1 = document.querySelector('.box1')
+            // 将random 和num设置为全局变量
+            let random = 0
+            let num =0
+            // 开始按钮设置事件  点击生效 click
+            b1.addEventListener('click',function(){
+                // 开始定时器  并将返回的数字存储在num中
+                num = setInterval(  function(){
+                random = getRandom(0,arr.length-1)
+                // 向div中填充文字
+                box1.innerHTML = arr[random]
+            },100)
+            })
+            // 设置结束按钮
+            b2.addEventListener('click',function fun1(){
+                // 结束定时器
+                clearInterval(num)
+                // 删除数组中下标为random的一项
+                arr.splice(random,1)
+                if (arr.length ===0){
+                    // 将b1  b2设置为不可用的状态
+                b1.disabled= 'true'
+                b2.disabled= 'true'
+                box1.innerHTML = '点名结束'
+            }
+            })
+            
+        </script>
+
+    </div>
+</body>
+</html>

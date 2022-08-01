@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let arr = [0,2,12,0,3,45,1,65,8,74,24]
+        // let n =[]
+        // for(let i =0;i<arr.length;i++){
+        //     if (arr[i]!==0){
+        //         n.push(arr[i])
+        //     }
+        // }
+        // document.write(n)
+        for(let i =0; i<arr.length;i++){
+            for(let j=0;j<arr.length-i;j++){
+                if(arr[j]<arr[j+1]){
+                    let a
+                    a = arr[j]
+                    arr[j] = arr[j+1]
+                    arr[j+1] = a
+                }
+            }
+        }
+        document.write(arr)
+    </script>
+</body>
+</html>
